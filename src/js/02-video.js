@@ -5,7 +5,7 @@ const iframe = document.querySelector('iframe');
 const player = new VimeoPlayer(iframe);
 setReloudTime();
 
-player.on('play', throttle(playerOn, 1000));
+player.on('timeupdate', throttle(playerOn, 1000));
 
 function playerOn(data) {
   const currentTime = data.seconds;
